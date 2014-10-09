@@ -6,5 +6,8 @@ function Item (x,y,container){
 		this.container.remove(this);
 		nextContainer.add(this);
 	};
-	this.draw = function(){};
+	this.draw = function(){
+		//default draw function
+		this.drawRect(this.x*32,this.y*32,32,32,"#0F0");
+	};
 }
