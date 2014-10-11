@@ -7,6 +7,6 @@ function Container(){
 	};
 	
 	this.add = function(item){
-		list.push(item);
+		this.list.push(item);
 	};
 }

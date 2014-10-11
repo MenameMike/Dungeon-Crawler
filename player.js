@@ -1,15 +1,15 @@
-var player = function(){
-this.strength = 10;
-this.intelligence = 10;
-this.agility = 10;
+var Player = function(){
+	this.strength = 10;
+	this.intelligence = 10;
+	this.agility = 10;
 
 
-this.inventory = new container();
+	this.inventory = new Container();
 
-this.draw = function(){
-		
+	this.draw = function(){
+			
 
-		}	
+	}	
 
 
 }

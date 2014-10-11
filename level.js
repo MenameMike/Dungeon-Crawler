@@ -4,15 +4,16 @@ function Level(width,height){
 	this.height = height;
 	this.tileMatrix = [];
 	this.containerMatrix = [];
-	for(var x=0;y<this.width;x++){
-		this.containerMatrix[this.width] = [];
-		this.tileMatrix[this.width] = [];
+	
+	for(var x=0;x<this.width;x++){
+		this.containerMatrix[x] = [];
+		this.tileMatrix[x] = [];
 	};
 	
-	for(var x=0;y<this.width;x++){
+	for(var x=0;x<this.width;x++){
 		for(var y=0;y<this.height;y++){
 			this.containerMatrix[x][y] = new Container();
-			this.tileMatrix[x][y] = new Tile();
+			this.tileMatrix[x][y] = new Tile(x,y);
 		};
 	};
 	//tile layer
@@ -23,10 +24,10 @@ function Level(width,height){
 		this.tileMatrix[x][y] = tile;
 	};
 	this.drawTiles = function(){
-		for(var x=0;y<this.width;x++){
+		for(var x=0;x<this.width;x++){
 			for(var y=0;y<this.height;y++){
-				var tile = this.tileMatrix[x][y];
-				tile.draw();
+				var t = this.tileMatrix[x][y];
+				t.draw();
 			}
 		}
 	};
@@ -35,10 +36,12 @@ function Level(width,height){
 		return this.containerMatrix[x][y];
 	};
 	this.placeItem = function(x,y,item){
+		item.x = x;
+		item.y = y;
 		item.moveTo(this.containerMatrix[x][y]);
 	};
 	this.drawItems = function(){
-		for(var x=0;y<this.width;x++){
+		for(var x=0;x<this.width;x++){
 			for(var y=0;y<this.height;y++){
 				var container = this.containerMatrix[x][y];
 				for(var i=0;i<container.list.length;i++){
