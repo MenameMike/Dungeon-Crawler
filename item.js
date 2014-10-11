@@ -1,7 +1,10 @@
 function Item (x,y,container){
+
 	this.x = x;
 	this.y = y;
 	this.container = container;
+	
+	this.rand = Math.random();
 	this.moveTo = function(nextContainer){
 		if(this.container){
 			this.container.remove(this);
