@@ -12,12 +12,12 @@ var Enemy = function (heath, x, y, container){
 
 		}	
 		
-		this.spawnSpider = function(x,y){
+	/*	this.spawnSpider = function(x,y){
 		this.health = 50;
-		var spiderClone = Object.create(enemy(this.health, x, y, ));
-		this.health = 50;
+		var spiderClone = Object.create(enemy(this.health, x, y,  );
+		
 		this.x
 		
 		
-		}
+		} */
 }

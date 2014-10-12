@@ -1,8 +1,9 @@
 var game_hud = new Hud();
 var game_level = new Level(32,32);
+var turnCount = 0;
 
 var it = new Item();
-var ply = new Player();
+var ply = new Player(100, 5, 10, new Container());
 game_level.placeItem(5,5,it);
 //game_level.placeItem(7,5,ply);
 
@@ -18,6 +19,7 @@ function update(){
 function turn(){
 	update();
 	draw();
+	turnCount++;
 }
 
 dh.input.addKeydownEvent(dh.input.keyVal.right,function(){

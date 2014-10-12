@@ -39,6 +39,7 @@ function Level(width,height){
 		item.x = x;
 		item.y = y;
 		item.moveTo(this.containerMatrix[x][y]);
+		
 	};
 	this.drawItems = function(){
 		for(var x=0;x<this.width;x++){
