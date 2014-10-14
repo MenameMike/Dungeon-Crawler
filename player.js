@@ -28,4 +28,4 @@ var Player = function(health, x, y){ //params take in class var and a race var l
 }
 
 Player.prototype = new Mob();
-Player.prototype.constructor = Mob;
+Player.prototype.constructor = Player;

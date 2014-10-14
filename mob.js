@@ -15,4 +15,4 @@ Item.apply(this, arguments);
 
 
 Mob.prototype = new Item();
-Mob.prototype.constructor = Item;
+Mob.prototype.constructor = Mob;
