@@ -10,7 +10,7 @@ var Player = function(health, x, y){ //params take in class var and a race var l
 	
 
 	this.draw = function(){
-	g.drawRect(x, y, 10, 10, "#ff0");
+		g.drawRect(this.x*32, this.y*32, 32, 32, "#ff0");
 	}	
 	
 	this.getStat = function(request){

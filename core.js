@@ -2,9 +2,8 @@ var game_hud = new Hud();
 var game_level = new Level(32,32);
 var turnCount = 0;
 
-var it = new Item();
-var ply = new Player(100, 5, 10, new Container());
-game_level.placeItem(5,5,it);
+var ply = new Player(100,4,4);
+game_level.placeItem(5,5,ply);
 //game_level.placeItem(7,5,ply);
 
 function draw(){
@@ -23,18 +22,22 @@ function turn(){
 }
 
 dh.input.addKeydownEvent(dh.input.keyVal.right,function(){
+	var it = ply;
 	game_level.placeItem(it.x+1,it.y,it);
 	turn();
 });
 dh.input.addKeydownEvent(dh.input.keyVal.left,function(){
+	var it = ply;
 	game_level.placeItem(it.x-1,it.y,it);
 	turn();
 });
 dh.input.addKeydownEvent(dh.input.keyVal.up,function(){
+	var it = ply;
 	game_level.placeItem(it.x,it.y-1,it);
 	turn();
 });
 dh.input.addKeydownEvent(dh.input.keyVal.down,function(){
+	var it = ply;
 	game_level.placeItem(it.x,it.y+1,it);
 	turn();
 });
