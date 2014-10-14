@@ -1,7 +1,7 @@
-var Player = function(health, x, y, container){ //params take in class var and a race var later one
-this.inventory = container;
-this.get_MOB = new Mob(health, x, y, this.inventory );
-
+var Player = function(health, x, y){ //params take in class var and a race var later one
+	
+	Mob.apply(this, arguments);	
+		
 	this.strength = 20;
 	this.intelligence = 10;
 	this.agility = 15;
@@ -10,11 +10,10 @@ this.get_MOB = new Mob(health, x, y, this.inventory );
 	
 
 	this.draw = function(){
-			
-
+	g.drawRect(x, y, 10, 10, "#ff0");
 	}	
 	
-	this.get_STAT = function(request){
+	this.getStat = function(request){
 		for(i = 0; i < this.stats.length; i++){
 			if(request == this.stats[i][0]){
 				return(this.stats[i][1]);
@@ -26,5 +25,7 @@ this.get_MOB = new Mob(health, x, y, this.inventory );
 			 }
 			 return null;
 	}
-
 }
+
+Player.prototype = new Mob();
+Player.prototype.constructor = Mob;

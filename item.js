@@ -1,8 +1,8 @@
-function Item (x,y,container){
+function Item (x,y){
 
 	this.x = x;
 	this.y = y;
-	this.container = container;
+	this.container = null;
 	
 	
 	this.moveTo = function(nextContainer){
