@@ -1,7 +1,7 @@
 var Player = function(health, x, y){ //params take in class var and a race var later one
 	
 	Mob.apply(this, arguments);	
-		
+	this.color = "#00f";
 	this.strength = 20;
 	this.intelligence = 10;
 	this.agility = 15;

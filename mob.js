@@ -1,5 +1,5 @@
 var Mob = function(health, x, y){
- 
+this.color = "#ff0";
 Item.apply(this, arguments);
 //damage function
 //health
@@ -11,7 +11,7 @@ Item.apply(this, arguments);
 	}
 	
 		this.draw = function(){
-		g.drawRect(this.x*32, this.y*32, 32, 32, "#ff0");
+		g.drawRect(this.x*32, this.y*32, 32, 32, this.color);
 	}	
 	this.update = function(){}
 }
