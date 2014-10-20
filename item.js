@@ -1,5 +1,5 @@
 function Item (x,y){
-
+	this.name = "Item";
 	this.x = x;
 	this.y = y;
 	this.container = null;
