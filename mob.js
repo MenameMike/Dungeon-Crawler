@@ -10,6 +10,9 @@ Item.apply(this, arguments);
 		target.health -= 10;
 	}
 	
+		this.draw = function(){
+		g.drawRect(this.x*32, this.y*32, 32, 32, "#ff0");
+	}	
 	this.update = function(){}
 }
 

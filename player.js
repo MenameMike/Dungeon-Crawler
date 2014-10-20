@@ -10,9 +10,7 @@ var Player = function(health, x, y){ //params take in class var and a race var l
 	
 this.inventory = new Container();
 
-	this.draw = function(){
-		g.drawRect(this.x*32, this.y*32, 32, 32, "#ff0");
-	}	
+
 	
 	this.getStat = function(request){
 		for(i = 0; i < this.stats.length; i++){
