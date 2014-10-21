@@ -1,5 +1,23 @@
 var game_hud = new Hud();
 var game_level = new Level(16,16);
+
+//set the level
+
+	for(var x=0;x<16;x++){
+		for(var y=0;y<16;y++){
+			var newTile = new Tile(x,y);
+			newTile.color = "#555";
+			game_level.setTile(x,y,newTile);
+		}
+	}
+	for(var x=1;x<15;x++){
+		for(var y=1;y<15;y++){
+			var newTile = new Tile(x,y);
+			newTile.color = "#000";
+			game_level.setTile(x,y,newTile);
+		}
+	}
+
 var turnCount = 0;
 
 var ply = new Player(100,4,4);
@@ -46,23 +64,19 @@ dh.input.addKeydownEvent(dh.input.keyVal.d,function(){
 });
 //movement
 dh.input.addKeydownEvent(dh.input.keyVal.right,function(){
-	var it = ply;
-	game_level.placeItem(it.x+1,it.y,it);
+	ply.tryMove(1,0);
 	turn();
 });
 dh.input.addKeydownEvent(dh.input.keyVal.left,function(){
-	var it = ply;
-	game_level.placeItem(it.x-1,it.y,it);
+	ply.tryMove(-1,0);
 	turn();
 });
 dh.input.addKeydownEvent(dh.input.keyVal.up,function(){
-	var it = ply;
-	game_level.placeItem(it.x,it.y-1,it);
+	ply.tryMove(0,-1);
 	turn();
 });
 dh.input.addKeydownEvent(dh.input.keyVal.down,function(){
-	var it = ply;
-	game_level.placeItem(it.x,it.y+1,it);
+	ply.tryMove(0,1);
 	turn();
 });
 
