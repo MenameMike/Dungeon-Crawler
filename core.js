@@ -32,6 +32,18 @@ dh.input.addKeydownEvent(dh.input.keyVal.a,function(){
 	ply.hitTile(ply.x-1,ply.y);
 	//turn();
 });
+dh.input.addKeydownEvent(dh.input.keyVal.s,function(){
+	ply.hitTile(ply.x,ply.y+1);
+	//turn();
+});
+dh.input.addKeydownEvent(dh.input.keyVal.w,function(){
+	ply.hitTile(ply.x,ply.y-1);
+	//turn();
+});
+dh.input.addKeydownEvent(dh.input.keyVal.d,function(){
+	ply.hitTile(ply.x+1,ply.y);
+	//turn();
+});
 //movement
 dh.input.addKeydownEvent(dh.input.keyVal.right,function(){
 	var it = ply;
