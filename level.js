@@ -21,6 +21,8 @@ function Level(width,height){
 		return this.tileMatrix[x][y];
 	};
 	this.setTile = function(x,y,tile){
+		tile.x = x;
+		tile.y = y;
 		this.tileMatrix[x][y] = tile;
 	};
 	this.drawTiles = function(){

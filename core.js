@@ -2,12 +2,15 @@ var game_hud = new Hud();
 var game_level = new Level(16,16);
 
 //set the level
-
+	function greyTile(){
+		var newTile = new Tile(0,0);
+		newTile.solid = true;
+		newTile.color = "#888";
+		return newTile;
+	}
 	for(var x=0;x<16;x++){
 		for(var y=0;y<16;y++){
-			var newTile = new Tile(x,y);
-			newTile.color = "#555";
-			game_level.setTile(x,y,newTile);
+			game_level.setTile(x,y,greyTile());
 		}
 	}
 	for(var x=1;x<15;x++){
@@ -17,6 +20,18 @@ var game_level = new Level(16,16);
 			game_level.setTile(x,y,newTile);
 		}
 	}
+	//wall on the right
+	game_level.setTile(5,1,greyTile());
+	game_level.setTile(5,2,greyTile());
+	game_level.setTile(5,3,greyTile());
+	game_level.setTile(5,4,greyTile());
+	
+	//wall on the left
+	game_level.setTile(1,5,greyTile());
+	game_level.setTile(2,5,greyTile());
+	game_level.setTile(3,5,greyTile());
+	//game_level.setTile(4,5,greyTile());
+	game_level.setTile(5,5,greyTile());
 
 var turnCount = 0;
 
@@ -24,7 +39,7 @@ var ply = new Player(100,4,4);
 
 var bill = new Enemy(100,6,6);
 
-game_level.placeItem(5,5,ply);
+game_level.placeItem(2,2,ply);
 
 game_level.placeItem(8,5,bill);
 
