@@ -52,7 +52,7 @@ function draw(){
 	game_hud.draw();
 }
 function update(){
-
+bill.update();
 }
 function turn(){
 	update();
