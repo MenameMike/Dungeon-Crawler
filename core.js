@@ -1,6 +1,6 @@
 var game_hud = new Hud();
 var game_level = new Level(16,16);
-
+var items = new Container();
 //set the level
 	function greyTile(){
 		var newTile = new Tile(0,0);
@@ -39,6 +39,10 @@ var ply = new Player(100,4,4);
 
 var bill = new Enemy(100,6,6);
 
+function spawn(item){
+	items.add(item);
+}
+
 game_level.placeItem(2,2,ply);
 
 game_level.placeItem(8,5,bill);
@@ -51,8 +55,17 @@ function draw(){
 	game_level.drawItems();
 	game_hud.draw();
 }
+
+function updateItems(){
+	for(var i=0;i<items.list;i++){
+		var it = items.list[i];
+		it.update();
+	}
+}
+
 function update(){
 bill.update();
+updateItems();
 }
 function turn(){
 	update();
@@ -60,6 +73,11 @@ function turn(){
 	turnCount++;
 }
 
+
+dh.input.addKeydownEvent(dh.input.keyVal.e,function(){
+	ply.shoot();
+	//turn();
+});
 
 dh.input.addKeydownEvent(dh.input.keyVal.a,function(){
 	ply.hitTile(ply.x-1,ply.y);

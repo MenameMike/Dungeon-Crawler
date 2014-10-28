@@ -3,6 +3,7 @@ var Mob = function(health, x, y){
 	Item.apply(this, arguments);
 	//damage function
 	//health
+	this.solid = true;
 
 	this.color = "#ff0";
 	this.health = health;
