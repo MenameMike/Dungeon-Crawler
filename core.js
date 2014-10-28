@@ -57,15 +57,19 @@ function draw(){
 }
 
 function updateItems(){
-	for(var i=0;i<items.list;i++){
+
+	for(var i=0;i<items.list.length;i++){
 		var it = items.list[i];
 		it.update();
+		
 	}
 }
 
 function update(){
 bill.update();
 updateItems();
+
+
 }
 function turn(){
 	update();

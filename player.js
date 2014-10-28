@@ -35,9 +35,9 @@ this.inventory = new Container();
 			 return null;
 	}
 	this.shoot = function(){
-	var distance = 5;
+	
 	spawn(new Bolt(this.x+1, this.y));
-	items.add(this);
+	
 	
 	}
 }
